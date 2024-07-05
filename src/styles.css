@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "../node_modules/@angular/material/prebuilt-themes/azure-blue.css";
+@import 'ngx-toastr/toastr';
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.row {
+    --bs-gutter-x: 0 !important;
+    --bs-gutter-y: 0 !important;
+}

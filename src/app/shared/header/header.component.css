@@ -1,0 +1,10 @@
+.user-btn{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding-bottom: 7px;
+}

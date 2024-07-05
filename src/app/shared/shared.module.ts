@@ -5,7 +5,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogModule, MatDialogTitle } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [],
@@ -17,7 +21,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    // BrowserAnimationsModule
+    ToastrModule.forRoot(),
+    MatIconModule,
+    MatTableModule,
+    MatDialogModule,
+    MatDialogActions, 
+    MatDialogClose, 
+    MatDialogTitle, 
+    MatDialogContent,
+    MatMenuModule
   ],
   exports: [
     CommonModule,
@@ -27,7 +39,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    // BrowserAnimationsModule
+    ToastrModule,
+    MatIconModule,
+    MatTableModule,
+    MatDialogModule,
+    MatDialogActions, 
+    MatDialogClose, 
+    MatDialogTitle, 
+    MatDialogContent,
+    MatMenuModule
   ]
 })
 export class SharedModule { }

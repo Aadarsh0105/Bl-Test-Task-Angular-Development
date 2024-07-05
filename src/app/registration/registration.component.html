@@ -3,38 +3,38 @@
     <div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
         <mat-card appearance="outlined">
             <mat-card-header>
-                <mat-card-title> Sign-in</mat-card-title>
+                <mat-card-title> Registration</mat-card-title>
             </mat-card-header>
             <mat-card-content class="mt-4">
-                @if(userDetail === null){
-                <div class="alert alert-danger" role="alert">
-                    Incorrect Email or Password!
-                </div>
-                }
+                <form [formGroup]="registrationForm">
 
-                <form [formGroup]="authForm">
+                    <mat-form-field class="example-full-width w-100 mt-3" appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input type="email" matInput [formControlName]="'name'" placeholder="abc">
+                        @if (registrationForm.get('name')!.hasError('required') && registrationForm.get('name')!.touched) {
+                        <mat-error>Name is required.</mat-error>
+                        }
+                    </mat-form-field>
 
                     <mat-form-field class="example-full-width w-100 mt-3" appearance="outline">
                         <mat-label>Email</mat-label>
                         <input type="email" matInput [formControlName]="'email'" placeholder="Ex. pat@example.com">
-                        @if (authForm.get('email')!.hasError('required') && authForm.get('email')!.touched) {
+                        @if (registrationForm.get('email')!.hasError('required') && registrationForm.get('email')!.touched) {
                         <mat-error>Email is required.</mat-error>
                         }
                     </mat-form-field>
 
                     <mat-form-field class="example-full-width w-100 mt-3" appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input [type]="hide ? 'password' : 'text'"  matInput [formControlName]="'password'" placeholder="********">
-                        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        @if (authForm.get('password')!.hasError('required') && authForm.get('password')!.touched) {
+                        <input type="text" matInput [formControlName]="'password'" placeholder="Ex. pat@example.com">
+                        @if (registrationForm.get('password')!.hasError('required') && registrationForm.get('password')!.touched) {
                         <mat-error>Password is required.</mat-error>
                         }
                     </mat-form-field>
                 </form>
                 <div class="d-flex justify-content-between mt-5">
-                    <div><a class="registration-btn" (click)="registration()"><small>New user Register?</small></a>
-                    </div>
-                    <div><button mat-flat-button color="primary" (click)="login()">Login</button></div>
+                    <div><a class="login-btn" (click)="signIn()"><small>Login?</small></a></div>
+                    <div><button mat-flat-button color="primary" (click)="register()">Register</button></div>
                 </div>
             </mat-card-content>
         </mat-card>
